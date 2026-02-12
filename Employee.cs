@@ -56,11 +56,9 @@
         }
         public void Update(int id, Employee NewEmp)
         {
-            // Find the employee by Id (not index)
             Employee selectEmployee = employees.FirstOrDefault(e => e.Id == id);
             if (selectEmployee != null)
             {
-                // Mapping - Update the found employee's properties
                 selectEmployee.Name = NewEmp.Name;
                 selectEmployee.Code = NewEmp.Code;
                 selectEmployee.Job = NewEmp.Job;
@@ -73,7 +71,6 @@
         }
         public void Delete(int id)
         {
-            // Find and remove by Id (not index)
             Employee empToDelete = employees.FirstOrDefault(e => e.Id == id);
             if (empToDelete != null)
             {
@@ -85,7 +82,6 @@
                 Console.WriteLine($"Employee with Id {id} not found.");
             }
         }
-        // GetById - Read single employee by Id
         public Employee GetById(int id)
         {
             Employee emp = employees.FirstOrDefault(e => e.Id == id);

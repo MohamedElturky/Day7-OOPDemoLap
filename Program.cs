@@ -81,55 +81,33 @@
             #endregion
 
                         #region Task - Full CRUD with OOP Concepts
-                        /*
-                         * OOP Concepts Demonstrated:
-                         * 1 - Object & Class:    Employee class with properties and methods
-                         * 2 - Inheritance:       Employee inherits from Human (abstract class)
-                         * 3 - Polymorphism:      Override SayHello() and ToString() methods
-                         * 4 - Encapsulation:     Private fields (_id, _name, code) with public properties
-                         * 5 - Abstraction:       Human (abstract class) + IOperation, ISendEmail (interfaces)
-                         */
 
-                        Console.WriteLine("\n========== FULL CRUD DEMO ==========\n");
-
-                        // Create an Employee object (Object & Class)
                         Employee empService = new Employee();
 
-                        // -------- CREATE --------
                         Console.WriteLine(">>> CREATE - Adding new employee");
                         Employee newEmp = new Employee() { Id = 10, Name = "Omar", Code = 110, Job = "Manager" };
                         empService.Save(newEmp);
                         empService.GetAll();
 
-                        // -------- READ ALL --------
                         Console.WriteLine("\n>>> READ ALL - Display all employees");
                         empService.GetAll();
 
-                        // -------- READ BY ID --------
                         Console.WriteLine("\n>>> READ BY ID - Get employee with Id = 2");
                         empService.GetById(2);
 
-                        // -------- UPDATE --------
                         Console.WriteLine("\n>>> UPDATE - Update employee with Id = 2");
                         Employee updatedEmp = new Employee() { Name = "Tamer Updated", Code = 202, Job = "Senior Developer" };
                         empService.Update(2, updatedEmp);
                         empService.GetAll();
 
-                        // -------- DELETE --------
                         Console.WriteLine("\n>>> DELETE - Delete employee with Id = 3");
                         empService.Delete(3);
                         empService.GetAll();
 
-                        // -------- POLYMORPHISM Demo --------
                         Console.WriteLine("\n>>> POLYMORPHISM - Override methods");
-                        Console.WriteLine(empService.SayHello());    // Overridden from Human
-                        Console.WriteLine(empService.ToString());    // Overridden ToString
-
-                        // -------- INTERFACE Demo (ISendEmail) --------
+                        Console.WriteLine(empService.SayHello());
+                        Console.WriteLine(empService.ToString());
                         Console.WriteLine("\n>>> ABSTRACTION - Using Interface");
-                        // empService.SendEmail("test@email.com"); // Throws NotImplementedException
-
-                        Console.WriteLine("\n========== END CRUD DEMO ==========");
                         #endregion
 
                         Console.ReadLine();
